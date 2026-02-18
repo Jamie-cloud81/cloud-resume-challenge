@@ -15,9 +15,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AKIAXNDP37G7PP6M63XN }}
-          aws-secret-access-key: ${{ secrets.RwHQ5721eN+hoMIBdIlpsGCUWgV053MlqKnZGoEx }}
-          aws-region: ${{ secrets.us-east-2 }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Sync site to S3
         run: |
@@ -25,6 +25,3 @@ jobs:
             --delete \
             --exclude ".git/*" \
             --exclude ".github/*"
-
-      - name: Invalidate CloudFront cache (optional)
-        run: echo "We’ll add this once we store DIST_ID as a secret"
