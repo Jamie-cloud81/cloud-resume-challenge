@@ -8,3 +8,17 @@
   <p>Entry-level IT / Cloud Engineer</p>
 </body>
 </html>
+<p>Visitors: <span id="visits">Loading...</span></p>
+
+<script>
+  const API_URL = "https://hmrm8uhill.execute-api.us-east-2.amazonaws.com/count"; // .../count
+
+  fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("visits").textContent = data.count;
+    })
+    .catch(() => {
+      document.getElementById("visits").textContent = "error";
+    });
+</script>
