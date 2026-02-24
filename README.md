@@ -16,5 +16,3 @@ The site is deployed to Amazon S3 and delivered globally via Amazon CloudFront. 
 4. API Gateway invokes a Lambda function
 5. Lambda updates the visit count in DynamoDB and returns the new count
 6. The page displays the updated visitor count
-
-### Diagram (simple)
